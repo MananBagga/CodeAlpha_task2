@@ -72,13 +72,25 @@ void SudokuUI::generateAndPlay() {
     SudokuSolver solver;
 
     solver.generatePuzzle(board);
-    displayBoard(board);
-
     char choice;
-    cout << "Choose an option:\n";
-    cout << "1. Solve the Sudoku\n";
-    cout << "2. Watch the computer solve the Sudoku\n";
-    cin >> choice;
+
+    while (true)
+    {
+        displayBoard(board);
+        cout << "Choose an option:\n";
+        cout << "1. Solve the Sudoku\n";
+        cout << "2. Watch the computer solve the Sudoku\n";
+        cin >> choice;
+
+        if (choice == '1' || choice == '2')
+        {
+            break;
+        }
+        else{
+            cout << "Enter a valid input!";
+            system("pause");
+        }
+    }
 
     if (choice == '1') {
         userPlay(board);
@@ -89,8 +101,6 @@ void SudokuUI::generateAndPlay() {
         } else {
             cout << "\nNo solution exists for the given Sudoku!\n";
         }
-    } else {
-        cout << "Invalid choice. Exiting.\n";
     }
 }
 

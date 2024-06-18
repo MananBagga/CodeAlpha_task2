@@ -13,7 +13,6 @@ public:
     void playSudoku();
     void generateAndPlay();
 private:
-    void clearScreen();
     void printDivider();
     void userPlay(vector<vector<int>>& board);
 };
