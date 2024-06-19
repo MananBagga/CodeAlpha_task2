@@ -52,7 +52,7 @@ void SudokuSolver::generatePuzzle(vector<vector<int>>& board) {
 
     fillDiagonal(board);
     solve(board);
-    removeNumbers(board, 40); // Adjust the number of holes for difficulty
+    removeNumbers(board, 40); 
 }
 
 void SudokuSolver::removeNumbers(vector<vector<int>>& board, int holes) {
